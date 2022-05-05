@@ -88,7 +88,6 @@ function mutateArray(a) {
         return flattenObj(item);
     });
 
-
     // summing up some_array property
     formattedArray.map(item => {
         let sum = item
@@ -100,10 +99,9 @@ function mutateArray(a) {
         item.some_total = sum
     })
 
+    const guestOnly = formattedArray.filter(item => item.guest_type === 'guest');
 
-    
-
-    return formattedArray;
+    return guestOnly;
 }
 
 $(document)
