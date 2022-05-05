@@ -1,0 +1,70 @@
+.App {
+  background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.d-flex{
+  display: flex;
+}
+
+.calc{
+  width: 40%;
+  background-color: #282c34;
+    height: 80vh;
+}
+
+.btn{
+    font-size: 25px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    width: 30%;
+    height: 13vh;
+    font-weight: lighter;
+    outline: none;
+    border: none;
+    justify-content: center;
+    background-color: #e6e3e3;
+    color: black;
+}
+
+.btn.long{
+  width: 63%;
+}
+
+.btn.orange{
+  background-color: darkorange;
+  color: #fff;
+}
+
+.screen{
+  height: 16vh;
+  position: relative;
+  overflow-x: scroll;
+}
+
+.value{
+    color: #ffff;
+    font-size: 60px;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    right: 0;
+}
+
+
+
+@media (max-width: 768px) {
+  .calc {
+    width: 100%;
+  }
+
+}
