@@ -85,8 +85,23 @@ const flattenObj = (obj) => {
 //mutate array function
 function mutateArray(a) {
     const formattedArray = a.map(item => {
-      return flattenObj(item);
+        return flattenObj(item);
     });
+
+
+    // summing up some_array property
+    formattedArray.map(item => {
+        let sum = item
+            .some_array
+            .reduce((a, b) => a + b);
+
+        delete item.some_array;
+
+        item.some_total = sum
+    })
+
+
+    
 
     return formattedArray;
 }
