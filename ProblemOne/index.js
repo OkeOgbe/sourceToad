@@ -84,6 +84,8 @@ const flattenObj = (obj) => {
 
 //mutate array function
 function mutateArray(a) {
+
+
     const formattedArray = a.map(item => {
         return flattenObj(item);
     });
@@ -99,7 +101,27 @@ function mutateArray(a) {
         item.some_total = sum
     })
 
+    //filtering only objects with guest_type of guest
     const guestOnly = formattedArray.filter(item => item.guest_type === 'guest');
+
+
+    //alphabetically sorting array in asceneding manner based on first_name
+
+    guestOnly.sort((a, b) => {
+    let fa = a.first_name.toLowerCase(),
+        fb = b.first_name.toLowerCase();
+        la = a.last_name.toLowerCase();
+        lb = b.last_name.toLowerCase();
+
+    if (fa < fb && la < lb) {
+        return 1;
+    }
+    if (fa > fb && la > lb) {
+        return -1;
+    }
+    return 0;
+});
+
 
     return guestOnly;
 }
